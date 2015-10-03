@@ -1,6 +1,10 @@
 # parsing and I/O exercise
 
 --------------------------------------------------------------------------------
+- regex - ',\s' - more flexible 
+- string - ', ' - faster
+
+--------------------------------------------------------------------------------
 1. Are the dates using Gregorian calendar?
 The exercise does not get into implementation details. Dates are currently in a text file and as such it is up to the candidate to handle them in the most appropriate way.
 2. May I use the system default timezone?
