@@ -1,6 +1,17 @@
 # parsing and I/O exercise
 
 --------------------------------------------------------------------------------
+## requirements
+### functional
+How many males are in the address book?
+Who is the oldest person in the address book?
+How many days older is Bill than Paul?
+### non-functional
+performance
+memory footprint
+maintainability
+--------------------------------------------------------------------------------
+## parameters
 - regex - ',\s' - more flexible 
 - string - ', ' - faster
 
