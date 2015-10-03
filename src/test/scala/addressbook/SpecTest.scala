@@ -40,6 +40,7 @@ class SpecTest extends Spec {
             }
         }
 
+/*
         object `invalid address book` {
 
             object `empty address book` {
@@ -80,8 +81,9 @@ class SpecTest extends Spec {
                     assert(processor.olderByDays.get == 2862)
                 }
             }
-
         }
+*/
+
 
     }
 
