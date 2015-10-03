@@ -32,11 +32,11 @@ class SpecTest extends Spec {
             }
 
             def `should find Wes the oldest`: Unit = {
-                assert(processor.oldest.name == "Wes Jackson")
+                assert(processor.oldest.get.name == "Wes Jackson")
             }
 
             def `should compute how many days Bill is older than Paul`: Unit = {
-                assert(processor.olderByDays == 2862)
+                assert(processor.olderByDays.get == 2862)
             }
         }
 
@@ -52,12 +52,12 @@ class SpecTest extends Spec {
 
                 // todo
                 def `should not find the oldest`: Unit = {
-                    assert(processor.oldest.name == "Wes Jackson")
+                    assert(processor.oldest.get.name == "Wes Jackson")
                 }
 
                 // todo
                 def `should compute how many days is Bill older than Paul`: Unit = {
-                    assert(processor.olderByDays == 2862)
+                    assert(processor.olderByDays.get == 2862)
                 }
             }
 
@@ -72,12 +72,12 @@ class SpecTest extends Spec {
 
                 // todo
                 def `should not find the oldest`: Unit = {
-                    assert(processor.oldest.name == "Wes Jackson")
+                    assert(processor.oldest.get.name == "Wes Jackson")
                 }
 
                 // todo
                 def `should compute how many days Bill is older than Paul`: Unit = {
-                    assert(processor.olderByDays == 2862)
+                    assert(processor.olderByDays.get == 2862)
                 }
             }
 
