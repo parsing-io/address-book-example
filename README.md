@@ -1,6 +1,3 @@
-****************************
-* Parsing and I/O exercise *
-****************************
 # Requirements
 The requirement is to build a simple tool for processing Address Book.
 There are 3 pieces of information to get from the Address Book, but other might probably follow:
