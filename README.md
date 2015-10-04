@@ -111,14 +111,19 @@ Tests are using Spec from ScalaTest.
 ## Usage
 
 Jar with dependencies is pre-built in the assembly/ directory of this project.
+
 The tool can be launched:
+
     > java -cp path/to/address-book-example-assembly-0.1.jar addressbook.AddressBook path/to/data/generated.csv
+
 Note that in the data/ directory of this project, there is a generated address book file of 100.000 persons.
+
 The tool uses Scala 2.11.7 and has been tested on jdk1.8.0_40.
     
 ### Building the tool
 
 The tool with its dependencies can be assembled as one jar using:
+
     > sbt assembly
 
 ### Processing a file
