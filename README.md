@@ -49,16 +49,18 @@ also uses higher abstraction and it's implementation is much simpler.
 
 **4. the address book processing should be fast**
 Then LowLevelOptimizedLineProcessor is the choice. 
-For reading the address book file, either NIOFileProcessor or ScalaSourceFileProcessor
-can be used. ScalaSourceFileProcessor is slightly faster. There is also a variant of 
-NIOFileProcessor that uses Java1.1 BufferedReader directly (NIOFileProcessor#processFileJava11). 
-This is cca 1,76 faster than reading lines using Java NIO Path and Java Stream
-(tested on reading 1,000,000 lines in 1,000 loops). 
+For reading the address book file, either NIOFileProcessor or ScalaSourceFileProcessor 
+can be used. ScalaSourceFileProcessor is slightly faster. 
+The variant of NIOFileProcessor that uses directly Java1.1 BufferedReader
+is cca 1,76 faster than reading lines using Java NIO Path and Java Streams (tested on reading 
+1,000,000 lines in 1,000 loops). The variant that uses Java NIO Path and Java Streams
+is showed in addressbook.fileprocessor.NIOFileProcessor#processFileNIO.
 Changing the size of the buffer might also improve the performance with certain address book 
 file sizes. The tool uses the default of 8192 bytes.
 
 **5. Scala I/O API is preferred to Java NIO API or vice versa**
-ScalaSourceFileProcessor or NIOFileProcessor can be both used.
+ScalaSourceFileProcessor or NIOFileProcessor can be used to interoperate in future 
+with newly added code.
 
 Which of these classes (LowLevelOptimizedLineProcessor, RegexLineProcessor, ScalaSourceFileProcessor
 and NIOFileProcessor) should be used is passed to the tool as its parameters.
@@ -90,8 +92,20 @@ For string comparisons (when identifying certain person), string lengths are com
 contents which is slightly faster than doing the pattern match immediately.
 If it were more than a tool, e.g. enumeration can be used to model person's sex, logging library rather then
 printing to the standard output etc.
+Tests are using Spec from ScalaTest.
 
 ## Usage
+
+Jar with dependencies is pre-built in the assembly/ directory of this project.
+The tool can be launched:
+    > java -cp path/to/address-book-example-assembly-0.1.jar addressbook.AddressBook path/to/data/generated.csv
+Note that in the data/ directory of this project, there is a generated address book file of 100.000 persons.
+The tool uses Scala 2.11.7 and has been tested on jdk1.8.0_40.
+    
+### Building the tool
+The tool with its dependencies can be assembled as one jar using:
+    > sbt assembly
+
 ### Processing a file
 The only command line parameter passed to the tool is the aboslute pathname of the file to be processed.
 Example of "application.conf" file for optimized processing of an address book stored as UTF-8 text file:
@@ -129,6 +143,7 @@ exercise {
     dateDelimiter = "/"
   }
 }
+5 persons from Gumtree file are spread randomly across the generated file.
 Variability for length of first name and surname is 6 and 8 respectively. (This is not configurable so far).
 The configuration file application.conf contains information on its configuration keys as part of the file.
 
