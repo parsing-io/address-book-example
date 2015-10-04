@@ -125,6 +125,7 @@ The tool with its dependencies can be assembled as one jar using:
 
 The only command line parameter passed to the tool is the aboslute pathname of the file to be processed.
 Example of "application.conf" file for optimized processing of an address book stored as UTF-8 text file:
+
     exercise {
       parsing {
         action = "process"
@@ -141,9 +142,11 @@ Example of "application.conf" file for optimized processing of an address book s
         dateDelimiter = "/"
       }
     }
+    
 ### Generating a file
 
 Example of "application.conf" when generating a test address book file of 100000 lines:
+
     exercise {
       parsing {
         action = "generate"
@@ -160,6 +163,7 @@ Example of "application.conf" when generating a test address book file of 100000
         dateDelimiter = "/"
       }
     }
+    
 5 persons from Gumtree file are spread randomly across the generated file.
 
 Variability for length of first name and surname is 6 and 8 respectively. (This is not configurable so far).
