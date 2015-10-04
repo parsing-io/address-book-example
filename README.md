@@ -16,7 +16,8 @@ Each line entry of the Address Book file contains the following tokens:
 
 Tokens are delimited by ', ' (comma and space).
 Platform line separator is used.
-It is preferable to be able to process large files with proper memory footprint.
+
+As last requirement, the solution should be capable of processing large files with a small memory footprint.
 
 # Solution
 The solution is a small tool executed from the shell command line or within JVM via its simple API.
