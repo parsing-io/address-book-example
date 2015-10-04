@@ -35,55 +35,10 @@ class SpecTest extends Spec {
                 assert(processor.oldest.get.name == "Wes Jackson")
             }
 
-            def `should compute how many days Bill is older than Paul`: Unit = {
+            def `should compute how many days is Bill older than Paul`: Unit = {
                 assert(processor.olderByDays.get == 2862)
             }
         }
-
-/*
-        object `invalid address book` {
-
-            object `empty address book` {
-                val data = List.empty[String]
-                data.foreach(processor.processLine)
-
-                def `should find no males` {
-                    assert(processor.malesCount == 0)
-                }
-
-                // todo
-                def `should not find the oldest`: Unit = {
-                    assert(processor.oldest.get.name == "Wes Jackson")
-                }
-
-                // todo
-                def `should compute how many days is Bill older than Paul`: Unit = {
-                    assert(processor.olderByDays.get == 2862)
-                }
-            }
-
-            object `address book with insufficient info` {
-                // todo - without paul/bill
-                val data = List.empty[String]
-                data.foreach(processor.processLine)
-
-                def `should find no males` {
-                    assert(processor.malesCount == 0)
-                }
-
-                // todo
-                def `should not find the oldest`: Unit = {
-                    assert(processor.oldest.get.name == "Wes Jackson")
-                }
-
-                // todo
-                def `should compute how many days Bill is older than Paul`: Unit = {
-                    assert(processor.olderByDays.get == 2862)
-                }
-            }
-        }
-*/
-
 
     }
 
