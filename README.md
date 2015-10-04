@@ -17,6 +17,14 @@ Each line entry of the Address Book file contains the following tokens:
 Tokens are delimited by ', ' (comma and space).
 Platform line separator is used.
 
+The example of such Address Book file is as follows:
+
+    Bill McKnight, Male, 16/03/77
+    Paul Robinson, Male, 15/01/85
+    Gemma Lane, Female, 20/11/91
+    Sarah Stone, Female, 20/09/80
+    Wes Jackson, Male, 14/08/74
+
 As last requirement, the solution should be capable of processing large files with a small memory footprint.
 
 # Solution
